@@ -1,14 +1,14 @@
 # Conexiones VNC.
 
 ## Configuraciones previas de las máquinas.
-```
+
 | Sistema Operativo | Rol | Ip de la máquina |
 |-------------------|-----|------------------|
 | Windows 10        |master|172.XX.AA.12|
 | Windows 10        |slave|172.XX.AA.11|
 | Opensuse          |master|172.XX.AA.12|
 | Opensuse          |slave|172.XX.AA.12|
-```
+
 
 ## Conexiones VNC: Windows 10.
 
@@ -52,4 +52,4 @@ Como comprobación final usaremos el comando netstat -n para visualizar las cone
 
 # Conexiones VNC: Opensuse
 
-Configuramos desde el Yast el cortafuegos para que sean posibles las conexiones de tipo VNC e instalaremos 
+Configuramos desde el Yast el cortafuegos para que sean posibles las conexiones de tipo VNC e instalaremos
