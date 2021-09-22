@@ -145,10 +145,10 @@ Para controlar la pantalla local de manera directa usaremos x0vncserver, para el
 
 * Ejecutar el siguiente comando: x0vncserver -display :0 -passwordfile /home/ayoze/.vnc/passwd.
 
-![x0server](./img/)
-
-* lsof -i -n.
-
-![lsof](./img/imagen33.png)
+![x0server](./img/imagen27.png)
 
 * Ir al cliente y conectarnos al server.
+
+* lsof -i -n -P.
+
+![lsof](./img/imagen34.png)
