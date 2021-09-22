@@ -125,7 +125,7 @@ Para conectarnos a nuestro servidor VNC en opensuse abriremos un terminal y escr
 
 ![netstat](./img/imagen25.png)
 
-* Conectar desde cliente Linux a servidor VNC Windows.
+* Conectamos el cliente Linux a servidor VNC Windows.
 
 ![windows](./img/imagen31.png)
 
