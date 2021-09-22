@@ -18,7 +18,7 @@ Instalamos Tight VNC server y Tight VNC viewer en 2 máquinas con Windows 10 res
 
 ### Tight VNC server.
 
-![ServerVNC](./img/slaveserver.png)
+![ServerVNC](./img/imagen3.png)
 
 A la hora de la instalación configuramos las contraseñas de acceso al servicio.
 
@@ -32,7 +32,7 @@ Ejecutamos el comando nmap desde la máquina real y comprobamos que los puertos 
 
 ### Tight VNC client.
 
-![ClienteVNC](./img/slaveclient.png)
+![ClienteVNC](./img/imagen3.png)
 
 Nos aseguramos de que el cortafuegos de Windows nos permite las conexiones VNC.
 
@@ -42,13 +42,17 @@ Nos aseguramos de que el cortafuegos de Windows nos permite las conexiones VNC.
 
 Abrimos la aplicacion **VNC viewer** desde el **Windows Slave master** para conectarnos a nuestro servidor, es decir el **Windows Slave**, para ello nos pedirá una ip a la que conectarnos y una contraseña (que configuramos previamente).
 
-![Conexion](./img/conecciontightvnc1.png)
+![Conexion](./img/imagen7.png)
 
-![Conexion](./img/conecciontightvnc.png)
+![Conexion](./img/imagen8.png)
+
+Vemos que nos podemos conectar a nuestro equipo en remoto.
+
+![Remoto](./img/imagen9.png)
 
 Como comprobación final usaremos el comando netstat -n para visualizar las conexiones entre la máquina slave y la máquina master.
 
-![Conexion](./img/netstat-n.png)
+![Conexion](./img/imagen10.png)
 
 # Conexiones VNC: Opensuse.
 
@@ -60,77 +64,78 @@ Para ello debemos:
 
 * Permitir las conexiones VNC en el cortafuegos.
 
-![Cortafuegos](./img/imagenopensuse1.png)
+![Cortafuegos](./img/imagen14.png)
 
 * Incluir desde el Yast el servicio de VNC server, este lo podemos iniciar por comando o por interfaz gráfica.
 
-**Interfaz gráfica.**
+* En el Yast configuramos la administración remota del vnc server he instalamos los paquetes necsarios.
 
-![comprobar](./img/)
+![VNCserver](./img/imagen11.png)
 
-**Linea de comando.**
+![VNCserver](./img/imagen12.png)
 
-![comprobar](./img/)
+![VNCserver](./img/imagen13.png)
 
-* Establecer claves para conexiones VNC.
+* Establecer claves para conexiones VNC. Se nos mostrará un numero para nuestro escritorio remoto, lo anotamos (número **N**) en nuestro caso es 2..
 
-![comprobar](./img/)
-
-* Se nos mostrará un numero para nuestro escritorio remoto, lo anotamos (número **N**) .
-
-![comprobar](./img/)
+![vncserver](./img/imagen15.png)
 
 * Ejecutamos el comando ```ps -ef | grep vnc``` para comprobar los servicios relacionados con VNC que están activos.
 
-![comprobar](./img/)
+![comprobar](./img/imagen17.png)
 
 * Ejecutamos `lsof -i -n` para comprobar que los puertos abiertos para VNC son 580X y 590X.
 
-![comprobar](./img/)
+![comprobar](./img/imagen18.png)
 
 ### Comprobaciones.
 
-Ejecutamos **`nmap -Pn 172.19.28.31`** para ver que los puertos disponibles desde fuera son los puertos 5801 y 5901
+Ejecutamos **`nmap -Pn 172.19.28.32`** para ver que los puertos disponibles desde fuera son los puertos 5801 y 5901
 
-![comprobar](./img/)
+![comprobar](./img/imagen19.png)
 
 ### Opensuse Master VNC.
 
-Para conectarnos a nuestro servidor VNC en opensuse abriremos una terminal y usaremos el comando ```vncviewer ip-vnc-server: N```
+Para conectarnos a nuestro servidor VNC en opensuse abriremos un terminal y escribimos ```vncviewer```.
 
-![comprobar](./img/)
+![Conectar](./img/imagen20.png)
 
-### Comprobaciones finales.
+* Se nos abrirá una ventana en la que escribiremos ``ip-vnc-server: N`` y nos conectamos.
 
-* Conectar desde Linux a Linux serverVNC.
+![vncviewer](./img/imagen21.png)
 
-![comprobar](./img/)
+![vncviewer](./img/imagen22.png)
 
 * Ejecutar ```lsof -i -n``` en el server
 
-![comprobar](./img/)
+![lsof](./img/imagen23.png)
 
 * Ejecutar ```vncserver -list``` en el server
 
-![comprobar](./img/)
+![list](./img/imagen24.png)
 
 ### Comprobaciones con SSOO cruzados.
 
-* Conexión desde cliente Linux a servidor VNC Windows.
+* Conexión desde cliente Windows al servidor VNC Linux.
 
-![comprobar](./img/)
+![SSOO](./img/imagen29.png)
+![SSOO](./img/imagen30.png)
 
 * Ejecutar netstat -n en el servidor Windows.
 
-![comprobar](./img/)
+![netstat](./img/imagen25.png)
 
-* Conectar desde cliente Windows a servidor VNC Linux.
+* Conectar desde cliente Linux a servidor VNC Windows.
 
-![comprobar](./img/)
+![windows](./img/imagen31.png)
+
+![windows](./img/imagen22.png)
+
+![windows](./img/imagen32.png)
 
 * Ejecutar lsof -i.
 
-![comprobar](./img/)
+![lsof](./img/imagen26.png)
 
 ## Display 0 en GNU/Linux.
 
@@ -140,10 +145,10 @@ Para controlar la pantalla local de manera directa usaremos x0vncserver, para el
 
 * Ejecutar el siguiente comando: x0vncserver -display :0 -passwordfile /home/ayoze/.vnc/passwd.
 
-![comprobar](./img/)
+![x0server](./img/)
 
 * lsof -i -n.
 
-![comprobar](./img/)
+![lsof](./img/imagen33.png)
 
 * Ir al cliente y conectarnos al server.
