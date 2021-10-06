@@ -1,6 +1,6 @@
-# Concección SSH
+# Conexión SSH
 
-Para relizar esta practica vamos a necesitar las siguientes 4 máquinas virtuales:
+Para realizar esta practica vamos a necesitar las siguientes 4 máquinas virtuales:
 
 | Sistema Operativo | Rol | Ip de la máquina | Hostname |
 |-------------------|-----|------------------|----------|
@@ -15,7 +15,7 @@ Cambiamos la contraseña root por una contraseña segura.
 
 ![](./img/001.png)
 
-En el archivo /etc/hosts añadimos las ips de las máquinas cliente de windows y de opensuse.
+En el archivo **/etc/hosts** añadimos las ips de las máquinas cliente de Windows y de Opensuse.
 
 ![](./img/002.png)
 
@@ -23,10 +23,10 @@ En el archivo /etc/hosts añadimos las ips de las máquinas cliente de windows y
 
 Crearemos 4 usuarios en server28g:
 
-+ hernandez1
-+ hernandez2
-+ hernandez3
-+ hernandez4
++ hernandez1.
++ hernandez2.
++ hernandez3.
++ hernandez4.
 
 Esto se hace de la siguiente manera:
 
@@ -34,11 +34,11 @@ Esto se hace de la siguiente manera:
 
 ## Cliente Opensuse
 
-Tenemos que abrir el fichero /etc/hosts y añadir las ips del cliente windows y del servidor opensuse como en el primer paso.
+Tenemos que abrir el fichero /etc/hosts y añadir las ips del cliente Windows y del servidor Opensuse como en el primer paso.
 
 
 ## Cliente Windows
-En el cliente windows lo que debemos hacer es editar el fichero hosts ubicado en la ruta ```C:\Windows\System32\drivers\etc\hosts``` y añadir las ips del cliente y server opensuse.
+En el cliente windows lo que debemos hacer es editar el fichero hosts ubicado en la ruta ```C:\Windows\System32\drivers\etc\hosts``` y añadir las ips del cliente y servidor Opensuse.
 
 ![](./img/009.png)
 
@@ -46,7 +46,7 @@ En el cliente windows lo que debemos hacer es editar el fichero hosts ubicado en
 
 ## Instalacion del servicio ssh
 
-Ahora debemos de instalar el paquete openssh en nuestro server para hacer posibles las conexiones ssh.
+Ahora debemos de instalar el paquete Openssh en nuestro servidor para hacer posibles las conexiones SSH.
 
 ![](./img/005.png)
 
@@ -56,28 +56,26 @@ Comprobamos que el servicio se encuentra activo sin errores de funcionamiento, p
 
 ![](./img/007.png)
 
-Comprobamos que podemos hacer ping a la máquina opensuse.
+Comprobamos que podemos hacer ping a la máquina Opensuse.
 
 ![](./img/008.png)
 
-Comprobamos que el cortafuegos permite las conexiones ssh
+Comprobamos que el cortafuegos permite las conexiones SSH.
 
 ![](./img/011.png)
 
 ![](./img/012.png)
 
-Comprobamos que el puerto para el ssh es el 22.
+Comprobamos que el puerto para el SSH es el 22.
 
 ![](./img/016.png)
 
-Otra manera seía usar el comando
+Otra manera seía usar el comando.
 ~~~
 
 lsof -i:22 -Pn
 
 ~~~
-
-
 
 ## Windows
 
@@ -99,25 +97,25 @@ Aquí podemos añadir un icono a nuestra barra de tarea.
 
 ![](./img/023.png)
 
-Abrimos el **Putty** y añadimos la ip en el cuadro debajo de la frase ``Host Name (or IP address)``
+Abrimos el **Putty** y añadimos la ip en el cuadro debajo de la frase ``Host Name (or IP address)``.
 
 ![](./img/024.png)
 
-Ahora nos aparece una advertencia de seguridad del programa de Putty, se resume en que el equipo no conoce la clave ssh de seguridad y que si queremos seguir adelante, elegimos **Accept**.
+Ahora nos aparece una advertencia de seguridad del programa de Putty, se resume en que el equipo no conoce la clave SSH de seguridad y que si queremos seguir adelante, elegimos **Accept**.
 
 ![](./img/025.png)
 
-Ahora se nos abre un cuadro para introducir un usuario y contraseña del server de Linux.
+Ahora se nos abre un cuadro para introducir un usuario y contraseña del servidor Linux.
 
 ![](./img/026.png)
 
 ### Claves SSH dentro del server
 
-Las claves SSH se encuentran alojadas todas en el directorio /etc/ssh, comprobamos esto con los comandos **vdir** o **ls**, en mi caso uso **ls | grep ssh_host** para filtrar solo las claves ssh del host.
+Las claves SSH se encuentran alojadas todas en el directorio **/etc/ssh**, comprobamos esto con los comandos **vdir** o **ls**, en mi caso uso **ls | grep ssh_host** para filtrar solo las claves SSH del host.
 
 ![](./img/027.png)
 
-Ahora modificamos el fichero ssh_host_rsa_key y comentamos todas las lineas y dejamos la linea
+Ahora modificamos el fichero **ssh_host_rsa_key** y comentamos todas las lineas y dejamos la linea
 **Hostkey /etc/ssh/ssh_host_rsa_key**, esto lo que hace es permitir solo el uso de claves de tipo RSA.
 
 ![](./img/028.png)
@@ -126,15 +124,15 @@ Ahora modificamos el fichero ssh_host_rsa_key y comentamos todas las lineas y de
 
 ## Regeneración de claves SSH
 
-Ahora vamos a comprobar que si el cliente detecta algo extraño con nuestra clave no la va a reconocer; para ello generamos una clave nueva con el comando **ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key**
+Ahora vamos a comprobar que si el cliente detecta algo extraño con nuestra clave no la va a reconocer; para ello generamos una clave nueva con el comando **ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key**.
 
 ![](./img/030.png)
 
-Reiniciamos el servicio SSH e intentamos conectarnos desde las máquinas de windows y Opensuse.
+Reiniciamos el servicio SSH e intentamos conectarnos desde las máquinas de Windows y Opensuse.
 
 ![](./img/031.png)
 
-Vemos que nos da un error debido a que la clave SSH es incorrecta en el caso de Opensuse
+Vemos que nos da un error debido a que la clave SSH es incorrecta en el caso de Opensuse.
 
 ![](./img/032.png)
 
@@ -142,11 +140,11 @@ Para arreglarla debemos de ejecutar el comando que nos proporciona la propia adv
 
 ![](./img/034.png)
 
-Intentamos conectarnos de nuevo y vemos que no hay errores ahora
+Intentamos conectarnos de nuevo y vemos que no hay errores ahora.
 
 ![](./img/035.png)
 
-Ahora vamos a windows y hacemos el proceso de conexion al servidor ssh de nuevo y nos sale la una advertencia, pero podemos simplemente ignorarla, aceptar y conectarnos de nuevo al server.
+Ahora vamos a Windows y hacemos el proceso de conexión al servidor SSH de nuevo y nos sale la una advertencia, pero podemos simplemente ignorarla, aceptar y conectarnos de nuevo al server.
 
 ![](./img/037.png)
 
@@ -172,13 +170,13 @@ Hacemos lo mismo en Windows.
 
 ## Identificación mediante claves públicas
 
-Debemos de dirigirnos al cliente y generar una clave ssh nueva que copiaremos al servidor para que nos autentifique de manera automática.
+Debemos de dirigirnos al cliente y generar una clave SSH nueva que copiaremos al servidor para que nos autentifique de manera automática.
 
 Generación de clave:
 
 ![](./img/043.png)
 
-Copiado de clave al server:
+Copiado de clave al servidor:
 
 ![](./img/044.png)
 
@@ -193,11 +191,11 @@ Lo mismo para Windows, exepto que aquí si nos pide contraseña porque no tenemo
 
 ## Uso de aplicaciones gráficas de manera remota.
 
-Instalamos una aplicación (geany) en el servidor que no esté en el cliente.
+Instalamos una aplicación *(geany)* en el servidor que no esté en el cliente.
 
 ![](./img/047.png)
 
-Ahora comprobamos que el fichero **/etc/ssh/sshd_config** tiene actica la linea ```X11Forwarding yes```, esto lo que hace es permitir la ejecucion de manera gráfica de aplicaciones en el cliente sin que estén instaladas en el mismo
+Ahora comprobamos que el fichero **/etc/ssh/sshd_config** tiene activa la linea ```X11Forwarding yes```, esto lo que hace es permitir la ejecución de manera gráfica de aplicaciones en el cliente sin que estén instaladas en el mismo.
 
 ![](./img/048.png)
 
@@ -205,7 +203,7 @@ Comprobamos que realmente geany no está instalada.
 
 ![](./img/049.png)
 
-Nos conectamos como normalmente, pero añadimos el parámetro ```-X``` (ssh -X user@ip/hostname)
+Nos conectamos como normalmente, pero añadimos el parámetro ```-X``` (ssh -X user@ip/hostname).
 
 ![](./img/050.png)
 
@@ -215,7 +213,7 @@ Vemos que realmente se ha ejecutado.
 
 ## Aplicaciones nativas de Windows
 
-Wine es un emulador de aplicaciones de windows disponible para Linux, con ella lo que vamos a hacer es ejecutar el notepad de wine de manera remota
+Wine es un emulador de aplicaciones de Windows disponible para Linux, con ella lo que vamos a hacer es ejecutar el notepad de wine de manera remota.
 
 ![](./img/052.png)
 
@@ -223,7 +221,7 @@ Wine es un emulador de aplicaciones de windows disponible para Linux, con ella l
 
 ## Denegación de usuarios
 
-En el fichero **/etc/ssh/sshd_config** añadimos la linea DenyUsers hernandez2 en el server para que desde las máquinas remotas no se pueda acceder a ese usuario
+En el fichero **/etc/ssh/sshd_config** añadimos la linea DenyUsers hernandez2 en el server para que desde las máquinas remotas no se pueda acceder a ese usuario.
 
 ![](./img/054.png)
 
@@ -231,9 +229,111 @@ En el fichero **/etc/ssh/sshd_config** añadimos la linea DenyUsers hernandez2 e
 
 Ahora comprobamos que la sintaxis es correcta, los valores son los siguientes:
 
-* 0= CORRECTO
-* 1= INCORRECTO
+* 0= CORRECTO.
+* 1= INCORRECTO.
 
 ![](./img/056.png)
 
+Vemos que no es posible conectarnos al usuario hernandez2.
+
+![](./img/057.png)
+
 ## Restricción uso de aplicaciones
+
+Vamos a crear un nuevo grupo llamado **remoteapps** que va a contener el usuario hernandez4 como miembro único.
+
+![](./img/058.png)
+
+Ahora debemos de localizar donde se encuentra *geany* y cambiar los permisos y grupo propietario del programa para que nada más el grupo **remoteapps** tenga acceso a él.
+
+![](./img/059.png)
+
+Vemos que con el usuario ayoze dentro del servidor no tenemos acceso, ahora probamos desde el cliente accediendo con *hernandez1*.
+
+![](./img/060.png)
+
+Nos deniega el permiso.
+
+![](./img/061.png)
+
+Vemos que nos deja ejecutar la aplicación como hernandez4.
+
+![](./img/062.png)
+
+## Servidor SSH en Windows.
+
+### Configuraciones previas
+
+Debemos de añadir las ips y el hostname de los equipos cliente Windows y Opensuse en el fichero ***hosts*** ubicado en **C:\Windows\System32\drivers\etc\hosts**.
+
+![](./img/063.png)
+
+![](./img/064.png)
+
+Nos dirigimos al cortafuegos de los equipos de Windows y deshabilitamos las reglas que impiden el reenvío de ping tanto en reglas de entrada y salida.
+
+![](./img/065.png)
+
+Comprobamos que podemos hacer ping a las 2 máquinas.
+
+![](./img/066.png)
+
+### Instalacion del servidor SSH
+
+En Windows instalaremos OpenSSH que está disponible en Github.  
+
+![](./img/067.png)
+
+Lo guardamos en la ruta **C:\Program Files\OpenSSH-Win64** y ejecutamos una serie de comandos para configurarlo.
+
+Ejecutamos **Set-ExecutionPolicy -ExecutionPolicy Bypass** que cambia las políticas de ejecución del servicio para que se no se pregunte a la hora de ejecutarse el programa y tampoco salgan advertencias.
+
+Instalamos el componente install-sshd.ps1
+
+![](./img/068.png)
+
+Vemos que los servicios **sshd, y ssh-agent**.
+
+![](./img/069.png)
+
+Definimos una serie de parámetros para que el puerto adjudicado al SSH sea el 22, que la direccion de las comunicaciones sean solo entrantes y un par más.
+
+![](./img/071.png)
+
+Configuramos los servicios ssh-agent y sshd para que se inicien junto al equipo.
+
+![](./img/072.png)
+
+Generamos claves ssh ejecutando el componente **ssh-keygen.exe**.
+
+![](./img/073.png)
+
+Dejamos la clave en blanco para que nos salga una clave por defecto.
+
+![](./img/074.png)
+
+Ejecutamos **FixHostFilePermissions.ps1 -Confirm:$false** para cambiar los permisos de las claves ssh.
+
+![](./img/075.png)
+
+Nos conectamos al servidor SSH Windows desde Opensuse y ejecutamos **lsof -i -n** para ver al final del comando que estamos conectados vía ssh.
+
+![](./img/076.png)
+
+![](./img/082.png)
+
+En Windows nos conectamos con Putty.
+
+![](./img/078.png)
+
+Procedemos como desde el inicio.
+
+![](./img/079.png)
+
+Ponemos el usuario ADMINISTRADOR y su contraseña respectiva.
+
+![](./img/080.png)
+
+Vemos que la primera linea nos dice que estamos conectados a la dirección ip de nuestro servidor Windows via SSH por el puerto 22.
+
+![](./img/077.png)
