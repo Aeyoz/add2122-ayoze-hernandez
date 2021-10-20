@@ -2,34 +2,34 @@
 
 ## Servidor Samba
 
-### Preparativos
+#### Preparativos
 
-### Usuarios locales
+#### Usuarios locales
 
-### Creación de las carpetas de los futuros recursos compartidos
+![server](./img/server/001.png)
 
-### Configuración del servidor Samba
+#### Creación de carpetas
 
-### Recursos compartidos de red
+#### Configuracion del Servidor Samba
 
-### Usuarios Samba
+#### Creación de los recursos compartidos
 
-###### Reiniciamos
+#### Usuarios Samba
 
-## Windows
+#### Reiniciar
 
-### Cliente Windows GUI
+## Cliente Windows
 
-### Cliente Windows comandos
+### Acceso a los recursos compartidos
 
-## Cliente GNU/Linux
+### Comandos en el cliente Windows
 
-### Cliente GNU/Linux GUI
+## Cliente OpenSUSE
 
-### Cliente GNU/Linux comandos
+### Acceso a los recursos compartidos
 
-#### Montaje manual
+### Comandos en el cliente OpenSUSE
 
-#### Montaje automático
+### Montaje automático
 
-## Preguntas para resolver
+# Preguntas a resolver
