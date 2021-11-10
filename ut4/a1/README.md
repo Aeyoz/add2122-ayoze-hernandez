@@ -67,7 +67,7 @@ Como no podemos acceder significa que el cortafuegos de la máquina servidor no 
 
 ![](./img/012.png)
 
-Volvemos a comprobar el acceso y vemos que nos permite ver los puertos ahora, sin embargo no funciona con el hostname, por lo que usamos la ip.
+Volvemos a comprobar el acceso y vemos que nos permite ver los puertos ahora, sin embargo no funciona con el hostname, por lo que usamos la IP.
 
 ![](./img/013.png)
 
