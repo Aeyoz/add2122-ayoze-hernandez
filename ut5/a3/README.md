@@ -6,7 +6,7 @@
 
 </center>
 
-***Nombre:*** Ayoze Hernandez Díaz.
+***Nombre:*** Ayoze Hernández Díaz.
 
 ***Curso:*** 2º de Ciclo Superior de Administración de Sistemas Informáticos en Red.
 
@@ -138,6 +138,10 @@ Ejecutamos un nmap localhost para ver que el servicio de mysql está abierto.
 Vemos que desde la máquina real no está abierto.
 
 ![](./img/028.png)
+
+Y además vemos que tampoco nos deja conectarnos.
+
+![](./img/error/001.png)
 
 ### ***Gestionar dos contenedores***. <a name="Punto7"></a>
 
