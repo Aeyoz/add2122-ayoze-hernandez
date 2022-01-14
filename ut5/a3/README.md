@@ -123,6 +123,8 @@ En las 3 siguientes imagenes muestro las 3 configuraciones diferentes que he ado
 
 ![](./img/023.png)
 
+![](./img/023-2.png)
+
 Instalamos un cliente de **mysql** en la máquina.
 
 ![](./img/024.png)
