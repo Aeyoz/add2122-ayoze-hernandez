@@ -9,7 +9,7 @@ Qué desea hacer?
 "
 STDOUT.flush 
 
-option = gets.chomp
+option="b"
 
 puts "Su elección es " + option
 

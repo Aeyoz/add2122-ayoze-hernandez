@@ -9,15 +9,13 @@ Qué desea hacer?
 "
 STDOUT.flush 
 
-option = gets.chomp
+puts "Su elección es " + ARGV[0]
 
-puts "Su elección es " + option
-
-if option=="c" then
+if ARGV[0]=="-c" then
     system("ruby /home/ayoze/users28ruby/crear-usuarios28.rb")
-elsif option=="b" then
+elsif ARGV[0]=="-b" then
     system("ruby /home/ayoze/users28ruby/borrar-usuarios28.rb")
-elsif option=="s" then
+elsif ARGV[0]=="-s" then
     puts "Saliendo del programa"
     exit 0
 else

@@ -8,12 +8,13 @@ Qué desea hacer?
 3) Salir (s)
 "
 
-read OPTION
+OPTION="b"
 
-if [ "$OPTION" = "c" ]; then
+if [ "$OPTION" == "c" ]; then
     bash /home/ayoze/users28/crear-usuarios28.sh
 elif [ "$OPTION" = "b" ]; then
     bash /home/ayoze/users28/borrar-usuarios28.sh
+    exit 0
 elif [ "$OPTION" = "s" ]; then
     echo "Saliendo del programa"
     exit 0
