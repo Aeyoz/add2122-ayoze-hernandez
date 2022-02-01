@@ -14,14 +14,14 @@
 + [Bash](#id1)
 + [Ruby](#id2)
 
-#### ***Preparativos***
+## ***Preparativos***
 
 Para realizar los scripts debemos de tener la siguiente estructura de carpetas y archivos.
 
 ![](./img/001.png)
 ![](./img/002.png)
 
-#### ***Bash***. <a name="id1"></a>
+## ***Bash***. <a name="id1"></a>
 
 Scripts a realizar:
 
@@ -272,7 +272,7 @@ Comprobamos que no existe el usuario ayoze5 como muestra el ejemplo y se ejecuta
 
 ![](./img/009.png)
 
-#### ***Ruby***. <a name="id2"></a>
+## ***Ruby***. <a name="id2"></a>
 
 Scripts a realizar:
 
