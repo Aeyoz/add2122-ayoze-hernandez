@@ -24,5 +24,3 @@ else
     puts "La opción no es válida"
     exit 1
 end
-
-
