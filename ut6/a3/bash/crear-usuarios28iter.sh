@@ -4,9 +4,12 @@ figlet ayoze28
 
 NOMBRES=$(cat users.txt)
 
-FICHERO=$(cat /etc/passwd)
-
 for i in $NOMBRES; do
-    echo "Creando usuario $i"
-    useradd -g users -d /home/$i -m -s /bin/bash $i
+    echo=$(id $i || echo $?)
+    if [ "$echo" = "1" ]; then
+        echo "Creando usuario $i"
+        useradd $i
+    else
+        echo "El usuario $i ya existe"
+    fi
 done
