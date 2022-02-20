@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+date = `date`
+
+if system("systemctl status bot28 > /dev/null 2>&1") == true then
+   system("echo '#{date} => Esta wea no funciona!' >> /etc/bot28/log")
+   puts "El servicio del bot está iniciado"
+else
+   system("systemctl start bot28")
+   system("echo '#{date} => Iniciando el servicio bot28d ...' >> /etc/bot28/log")
+   puts "Iniciando el servicio del bot28"
+end
