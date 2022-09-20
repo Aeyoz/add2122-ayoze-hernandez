@@ -1,0 +1,12 @@
+.parrafo{
+    display: flexbox;
+    flex-direction: row-reverse;
+    background-color: rosybrown;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px 0px 10px 0px;
+    flex: end;
+    width: 100px;
+    height: 100px;
+}
